@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import persistencia.impl.EmpleadoDaoH2;
 import service.EmpleadoService;
 
 import java.sql.Connection;
@@ -17,7 +18,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class EmpleadoServiceTest {
-    private static EmpleadoService empleadoService=new EmpleadoService(new persistencia.impl.EmpleadoDaoH2());
+    private static EmpleadoService empleadoService=new EmpleadoService(new EmpleadoDaoH2());
 
     private static Logger LOGGER = Logger.getLogger(EmpleadoServiceTest.class);
     @BeforeAll

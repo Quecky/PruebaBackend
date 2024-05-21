@@ -19,6 +19,7 @@ Database may be already in use: "C:/Users/dalia.barranco/parcial.mv.db". Possibl
 IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
 RUNSCRIPT FROM 'create.sql' [90031-224]
 [2024-05-20 17:46:31][ INFO ][EmpleadoDaoH2:37] Empleado persistido Empleado{id=1, apellido='Aldo', nombre='Fefo', dni='43434', fechaNacimiento=2024-04-22}
+[2024-05-21 14:42:30][ INFO ][EmpleadoDaoH2:38] Empleado persistido Empleado{id=1, apellido='Aldo', nombre='Fefo', dni='43434', fechaNacimiento=2024-04-22}
 [2024-05-21 13:37:21][ INFO ][EmpleadoDaoH2:38] Empleado persistido Empleado{id=1, apellido='Aldo', nombre='Fefo', dni='43434', fechaNacimiento=2024-04-22}
 [2024-05-21 13:54:00][ INFO ][EmpleadoDaoH2:38] Empleado persistido Empleado{id=1, apellido='Cosme', nombre='Manganito', dni='443', fechaNacimiento=2024-12-13}
 [2024-05-21 13:54:00][ INFO ][EmpleadoDaoH2:38] Empleado persistido Empleado{id=2, apellido='Aldo', nombre='Fefo', dni='43434', fechaNacimiento=2024-04-22}

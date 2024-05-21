@@ -10,7 +10,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../POO-Holamundo/Backend/h2-2.2.224.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../projects-java/h2/h2-2.2.224.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -19,7 +19,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../POO-Holamundo/Backend/src/log4j-1.2.17.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../projects-java/apache-log4j-1.2.17/log4j-1.2.17.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

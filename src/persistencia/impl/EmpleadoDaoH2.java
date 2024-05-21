@@ -241,7 +241,7 @@ public class EmpleadoDaoH2 implements IDao<Empleado> {
                 empleadoActualizado= new Empleado(IdDevuelto,entidad.getApellido(), entidad.getNombre(), entidad.getDni(), entidad.getFechaNacimiento());
 
         }
-            LOGGER.info("Empleado actualizado "+empleadoActualizado);
+            LOGGER.info("Empleade actualizado "+empleadoActualizado);
             connection.commit();
 
             connection.setAutoCommit(true);
