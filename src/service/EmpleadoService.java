@@ -14,7 +14,7 @@ public class EmpleadoService {
         this.empleadoIDAO = empleadoIDAO;
     }
 
-    public Empleado registrarEmpleado(Empleado empleado){
+    public Empleado registrarEmpleado(Empleado empleado) {
         return empleadoIDAO.crear(empleado);
     }
 
@@ -25,4 +25,14 @@ public class EmpleadoService {
     public List<Empleado> buscarTodos() {
         return empleadoIDAO.buscarTodos();
     }
+
+
+    public void borrarPorId(Integer id) {
+        empleadoIDAO.borrarPorId(id);
+    }
+
+    public Empleado actualizar(Empleado entidad) {
+    return empleadoIDAO.actualizar(entidad);
+    }
+
 }
