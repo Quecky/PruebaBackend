@@ -91,7 +91,7 @@ public class EmpleadoDaoH2 implements IDao<Empleado> {
                 LocalDate fecha=resultSet.getDate(5).toLocalDate();
 
 
-                empleadoEncontrado = new Empleado(IdDevuelto,apellido,nombre,dni,fecha,domiclioEncontrado );
+                empleadoEncontrado = new Empleado(IdDevuelto,apellido,nombre,dni,fecha);
 
                 LOGGER.info("empleado encontrado "+empleadoEncontrado);
             }
@@ -104,7 +104,11 @@ public class EmpleadoDaoH2 implements IDao<Empleado> {
         }
         finally
         {
-            connection.close();
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         return empleadoEncontrado;
