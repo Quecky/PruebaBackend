@@ -1,1 +1,21 @@
 [2024-05-17 13:43:17][ DEBUG][Main:11] Probando Logger
+[2024-05-20 17:29:11][ ERROR][EmpleadoServiceTest:29] IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-224]
+[2024-05-20 17:32:13][ ERROR][EmpleadoServiceTest:29] IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-224]
+[2024-05-20 17:39:09][ ERROR][EmpleadoServiceTest:29] La base de datos puede que ya esté siendo utilizada: "C:/Users/dalia.barranco/parcial.mv.db". Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: "C:/Users/dalia.barranco/parcial.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]
+[2024-05-20 17:39:46][ ERROR][EmpleadoServiceTest:29] La base de datos puede que ya esté siendo utilizada: "C:/Users/dalia.barranco/parcial.mv.db". Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: "C:/Users/dalia.barranco/parcial.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]
+[2024-05-20 17:41:08][ ERROR][EmpleadoServiceTest:29] La base de datos puede que ya esté siendo utilizada: "C:/Users/dalia.barranco/parcial.mv.db". Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: "C:/Users/dalia.barranco/parcial.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]
+[2024-05-20 17:43:50][ ERROR][EmpleadoServiceTest:29] La base de datos puede que ya esté siendo utilizada: "C:/Users/dalia.barranco/parcial.mv.db". Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: "C:/Users/dalia.barranco/parcial.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]
+[2024-05-20 17:44:40][ ERROR][EmpleadoServiceTest:29] La base de datos puede que ya esté siendo utilizada: "C:/Users/dalia.barranco/parcial.mv.db". Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: "C:/Users/dalia.barranco/parcial.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]
+[2024-05-20 17:45:41][ ERROR][EmpleadoServiceTest:29] IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"
+IO Exception: "java.nio.file.NoSuchFileException: create.sql"; "create.sql"; SQL statement:
+RUNSCRIPT FROM 'create.sql' [90031-224]
+[2024-05-20 17:46:31][ INFO ][EmpleadoDaoH2:37] Empleado persistido Empleado{id=1, apellido='Aldo', nombre='Fefo', dni='43434', fechaNacimiento=2024-04-22}

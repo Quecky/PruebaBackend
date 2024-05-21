@@ -6,11 +6,12 @@ import org.apache.log4j.Logger;
 import persistencia.dao.IDao;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.List;
 
 public class EmpleadoDaoH2 implements IDao<Empleado> {
     private static String SQL_INSERT = "INSERT INTO EMPLEADOS VALUES(DEFAULT,?,?,?,?)";
-    private static String SQL_SELECT_ID="SELECT * FROM DOMICILIOS WHERE ID=?";
+    private static String SQL_SELECT_ID="SELECT * FROM EMPLEADOS WHERE ID=?";
 
     public static Logger LOGGER = Logger.getLogger(EmpleadoDaoH2.class);
     @Override
@@ -32,9 +33,9 @@ public class EmpleadoDaoH2 implements IDao<Empleado> {
             while (resultSet.next())
             {
                 Integer id = resultSet.getInt(1);
-                domicilioAretornar = new Domicilio(id,domicilio.getCalle(),domicilio.getNumero(),domicilio.getLocalidad(),domicilio.getProvincia());
+                empleadoAretornar = new Empleado(id,entidad.getApellido(),entidad.getNombre(),entidad.getDni(),entidad.getFechaNacimiento());
             }
-            LOGGER.info("Paciente persistido "+domicilioAretornar);
+            LOGGER.info("Empleado persistido "+empleadoAretornar);
             //el commit es para hacer modificaciones en la BD
             //no se necesita para listar
             connection.commit();
@@ -49,8 +50,8 @@ public class EmpleadoDaoH2 implements IDao<Empleado> {
                     connection.rollback();
                 }catch(SQLException ex)
                 {
-                    LOGGER.info(e.getMessage());
-                    e.printStackTrace();
+                    LOGGER.info(ex.getMessage());
+                    ex.printStackTrace();
                 }
             }
             LOGGER.info(e.getMessage());
@@ -58,7 +59,12 @@ public class EmpleadoDaoH2 implements IDao<Empleado> {
         }
         finally
         {
-            connection.close();
+
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
 
 
@@ -67,7 +73,41 @@ public class EmpleadoDaoH2 implements IDao<Empleado> {
 
     @Override
     public Empleado buscarPorId(Integer id) {
-        return null;
+
+        Connection connection = null;
+        Empleado empleadoEncontrado=null;
+        try
+        {
+            connection= H2Connection.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL_SELECT_ID);
+            preparedStatement.setInt(1,id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while(resultSet.next())
+            {
+                Integer IdDevuelto = resultSet.getInt(1);
+                String apellido=resultSet.getString(2);
+                String nombre=resultSet.getString(3);
+                String dni=resultSet.getString(4);
+                LocalDate fecha=resultSet.getDate(5).toLocalDate();
+
+
+                empleadoEncontrado = new Empleado(IdDevuelto,apellido,nombre,dni,fecha,domiclioEncontrado );
+
+                LOGGER.info("empleado encontrado "+empleadoEncontrado);
+            }
+
+        }catch(Exception e)
+        {
+
+            LOGGER.info(e.getMessage());
+            e.printStackTrace();
+        }
+        finally
+        {
+            connection.close();
+        }
+
+        return empleadoEncontrado;
     }
 
     @Override
